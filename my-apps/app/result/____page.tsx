@@ -1,12 +1,12 @@
-"use client"; // ← これを最上部に追加する
+"use client"; // クライアントコンポーネントとして扱う
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { db } from "../firebase";
+import { db } from "../firebase"; // Firestoreのインポート
 import { collection, doc, getDoc } from "firebase/firestore";
 import { RadarChart, PolarGrid, PolarAngleAxis, Radar, Tooltip, ResponsiveContainer } from "recharts";
 
-const ResultPage = () => {
+const ResultPageContent = () => {
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
   const [data, setData] = useState<{ subject: string; score: number }[]>([]);
@@ -52,6 +52,14 @@ const ResultPage = () => {
         <p>データを読み込んでいます...</p>
       )}
     </div>
+  );
+};
+
+const ResultPage = () => {
+  return (
+    <Suspense fallback={<p>読み込み中...</p>}>
+      <ResultPageContent />
+    </Suspense>
   );
 };
 
