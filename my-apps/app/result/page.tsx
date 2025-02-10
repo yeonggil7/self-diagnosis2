@@ -1,4 +1,4 @@
-import ClientResult from "../components/ClientResult"; // クライアントコンポーネントをインポート
+import ClientResult from "../../components/ClientResult"; // クライアントコンポーネントをインポート
 
 const ResultPage = () => {
   return (
