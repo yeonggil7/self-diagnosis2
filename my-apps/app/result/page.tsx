@@ -1,14 +1,11 @@
-
-"use client"; // 追加
-
-import ClientResult from "../../components/ClientResult"; // クライアントコンポーネントをインポート
+import { Suspense } from "react";
+import ClientResult from "@/components/ClientResult";
 
 const ResultPage = () => {
   return (
-    <div>
-      <h1>診断結果</h1>
+    <Suspense fallback={<p>Loading...</p>}>
       <ClientResult />
-    </div>
+    </Suspense>
   );
 };
 
