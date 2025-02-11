@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  /* config options here */
+
+const nextConfig = {
+  output: 'export',  // これがないと静的HTMLが生成されない
+  images: {
+    unoptimized: true  // 画像最適化を無効にする（Firebase Hosting 用）
+  }
 };
 
 module.exports = {
