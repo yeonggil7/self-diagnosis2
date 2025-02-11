@@ -1,6 +1,6 @@
 "use client"; // クライアントコンポーネントとして明示
 
-import { useSearchParams } from "next/navigation";
+import { useSearchParams } from "./next/navigation";
 import { useState, useEffect } from "react";
 import { db } from "../app/firebase";
 import { doc, getDoc } from "firebase/firestore";
