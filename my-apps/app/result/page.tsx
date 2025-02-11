@@ -1,3 +1,6 @@
+
+"use client"; // 追加
+
 import ClientResult from "../../components/ClientResult"; // クライアントコンポーネントをインポート
 
 const ResultPage = () => {
