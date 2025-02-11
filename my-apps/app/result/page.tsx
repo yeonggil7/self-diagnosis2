@@ -1,3 +1,5 @@
+
+"use client"; // 追加
 import { Suspense } from "react";
 import ClientResult from "@/components/ClientResult";
 
