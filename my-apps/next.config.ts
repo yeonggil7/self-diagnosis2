@@ -1,15 +1,10 @@
-import type { NextConfig } from "next";
 
+export default nextConfig;
 
-const nextConfig = {
-  output: 'export',  // これがないと静的HTMLが生成されない
-  images: {
-    unoptimized: true  // 画像最適化を無効にする（Firebase Hosting 用）
-  }
-};
+import { defineConfig } from 'next';
 
-module.exports = {
-  reactStrictMode: false, // ← ここを false にする
-};
+const nextConfig = defineConfig({
+  output: 'export', // 必須：これがないと `out/` が生成されない
+});
 
 export default nextConfig;
